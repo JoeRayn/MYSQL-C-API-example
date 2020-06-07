@@ -83,7 +83,7 @@ int main(void)
       exit(1);
     }
 
-  int row_fetch_status, row_count;
+  int row_fetch_status, row_count; // is row count big enough? maybe a unsigned long is better
   while (1)
     {
       row_count++;
@@ -168,6 +168,7 @@ MYSQL *setup_db_connection(void){
 
 int bind_buffers(MYSQL_STMT *stmt){
   /* Bind the result buffers for all columns before fetching them */
+  //these variables should be passed as perameters to this function once I get my query right
   unsigned long length[NCOLUMNS];
   MYSQL_BIND bind[NCOLUMNS];
   short small_data;
