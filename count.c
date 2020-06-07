@@ -121,7 +121,6 @@ int main(void)
       // handle row here
 
     }
-n
   mysql_free_result(prepare_meta_result);  
   cleanup(con, stmt);
   exit(0);
